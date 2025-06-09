@@ -50,7 +50,7 @@ methods: {
     <table>
         <caption> Mascotas ingresadas</caption>
         <colgroup>
-            <col span=3>
+            <col span=4>
             <col>
         </colgroup>
         <thead>
