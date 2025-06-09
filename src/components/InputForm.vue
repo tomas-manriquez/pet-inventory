@@ -7,9 +7,7 @@ export default {
             pets: []
         }
     },
-    computed :{
-
-    },
+    computed :{ },
 methods: {
     addPet(){
         this.pets.push({id: id++, name: this.newPet.name, specie: this.newPet.specie, age: this.newPet.age})
@@ -46,4 +44,27 @@ methods: {
     </form>
     <p v-if="this.pets.length>0"> Mascota agregada exitosamente!</p>
     <p v-else>Esperando input...</p>
+    <table>
+        <caption> Mascotas ingresadas</caption>
+        <colgroup>
+            <col span=3>
+            <col>
+        </colgroup>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Especie</th>
+            <th>Edad</th>
+        </tr>
+        </thead>
+        <tbody v-for="pet in pets" :key="pet.id">
+            <tr>
+            <td>{{ pet.id }}</td>
+            <td>{{ pet.name}}</td>
+            <td> {{ pet.specie }}</td>
+            <td> {{ pet.age}}</td>
+            </tr>
+        </tbody>
+    </table>
 </template>
