@@ -11,8 +11,11 @@ export default {
 methods: {
     addPet(){
         this.pets.push({id: id++, name: this.newPet.name, specie: this.newPet.specie, age: this.newPet.age})
-        this.newPet = {id: id++, name:'', specie:'',age:0},
+        this.newPet = {id: null, name:'', specie:'',age:0},
         console.log(this.pets)
+    },
+    removePet(pet){
+        this.pets = this.pets.filter((t) => t.id != pet.id)
     }
 }
 }
@@ -64,6 +67,9 @@ methods: {
             <td>{{ pet.name}}</td>
             <td> {{ pet.specie }}</td>
             <td> {{ pet.age}}</td>
+            <td>
+            <button v-on:click="removePet(pet)">X</button>
+            </td>
             </tr>
         </tbody>
     </table>
